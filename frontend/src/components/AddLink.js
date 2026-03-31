@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:8083/api";
+
 function AddLink({ refresh }) {
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
@@ -10,7 +12,7 @@ function AddLink({ refresh }) {
       return;
     }
 
-    await axios.post("http://localhost:8083/api/links", {
+    await axios.post(`${API_BASE}/links`, {
       url,
       description: description.trim(),
     });

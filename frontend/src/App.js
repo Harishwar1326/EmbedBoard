@@ -5,7 +5,7 @@ import LinkViewer from "./components/LinkViewer";
 
 const THEME_KEY = "dashboard-theme";
 const HIDDEN_LINKS_KEY = "dashboard-hidden-link-ids";
-const API_BASE = "http://localhost:8083/api";
+const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:8083/api";
 
 function App() {
   const [links, setLinks] = useState([]);
